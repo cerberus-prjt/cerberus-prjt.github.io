@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer">
+<title>Connexion TikTok · Le Tchat Explose</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;color:#1b1b1b}
+textarea{width:100%;height:120px;font:13px ui-monospace,monospace;padding:8px}button{font:inherit;padding:8px 16px;margin-top:8px;cursor:pointer}</style>
+</head><body>
+<h1>Presque fini ✅</h1>
+<p>Copie l'adresse ci-dessous et renvoie-la au bot Telegram.</p>
+<textarea id="u" readonly></textarea><br>
+<button id="c">Copier</button> <span id="ok"></span>
+<script>
+var u = document.getElementById("u"); u.value = location.href;
+document.getElementById("c").onclick = function () {
+  u.select(); try { navigator.clipboard.writeText(u.value); } catch (e) { document.execCommand("copy"); }
+  document.getElementById("ok").textContent = "Copié !";
+};
+</script>
+</body></html>
